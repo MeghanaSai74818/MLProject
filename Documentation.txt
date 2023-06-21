@@ -1,0 +1,46 @@
+Task 1: github setup, src folder and building the package
+-> Github repository creation
+-> Local, crate a folder wher you intend to store the project
+-> open Anaconda command prompt pointing to the folder
+-> code . to open Visual studio
+-> open terminal - command prompt and run the following
+-> command: conda create -p venv python==3.8 -y   =>  venv is name of the environment, -y is yes for all installation permissions
+-> The above way of setting up is ideal as the required libraries are installedin venv environment 
+-> Now activate the environment by using the command- conda activate venv/
+-> Now that we activated the environment, we can clone this in the entire directory so that we can commit our code in the Github
+-> Now in the environment use the command: git init => to initialize empty git repository
+-> Now its time to add a ReadMe file, so let us create one 
+-> Add the ReadMe file to the Github using the command: git add README.md
+-> No let us commit it to the repository using the command: git commit -m "first commit"
+-> Note: use: git status, to see the status of the commit
+-> Now before commiting, let us make sure it pointing to the MAIN branch using the command: git branch -M main
+-> Now let us add the origin repository by using the command: git remote add origin https://github.com/MeghanaSai74818/MLProject.git
+-> Now to see the remote repository associated with this git, use the command: git remote -v
+-> Now we can push the file from Origin to Main using the command: git push -u origin main
+-> Note: If you are doing it the first time set git global by using the following commands:
+    git config --global user.name "MeghanaSai74818"
+    git config --global user.email "meghanareddy74818@gmail.com"
+-> Now let us create a new file on git called gitignore and set it to python and commit changes so that the files that are not required are ignored
+-> Now we need to get the changes that we made on git to local using command: git pull
+-> The above process can be automated.
+-> On local, create new files setup.py and requirements.txt 
+-> setup.py (metadata related to the application) is responsible in creating the machine learning application as a package and also deploy in pypy
+-> we will create a new folder in mlproject called src and in that create a file named __init__.py
+-> setup.py finds the packages while running find_packsges() by locating the file __init__.py; all the folders containing the file will be considered as packages and it will build them which enables them to be imported like other open packages like seaborn etc
+->  we can install the setup.py directly or when we are installing requirements, we should run setup.py to build all the packages so inorder to enable that we add -e . at the end of requirements.txt file to trigger the setup.py
+-> Now we can run pip install -r requirements.txt to install the packages => this produces mlproject.egg-info, which indicates the package is installed and can be used when deployed in pypy
+-> Now we can add them in the git using command: git add .
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
