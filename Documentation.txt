@@ -6,7 +6,7 @@ Task 1: github setup, src folder and building the package
 -> open terminal - command prompt and run the following
 -> command: conda create -p venv python==3.8 -y   =>  venv is name of the environment, -y is yes for all installation permissions
 -> The above way of setting up is ideal as the required libraries are installedin venv environment 
--> Now activate the environment by using the command- conda activate venv/
+-> Now activate the environment by using the command: conda activate venv/
 -> Now that we activated the environment, we can clone this in the entire directory so that we can commit our code in the Github
 -> Now in the environment use the command: git init => to initialize empty git repository
 -> Now its time to add a ReadMe file, so let us create one 
@@ -30,17 +30,22 @@ Task 1: github setup, src folder and building the package
 ->  we can install the setup.py directly or when we are installing requirements, we should run setup.py to build all the packages so inorder to enable that we add -e . at the end of requirements.txt file to trigger the setup.py
 -> Now we can run pip install -r requirements.txt to install the packages => this produces mlproject.egg-info, which indicates the package is installed and can be used when deployed in pypy
 -> Now we can add them in the git using command: git add .
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
--> 
+-> commit them using the command: git commit -m "environment setup"
+-> Pushing to main is done using command: git push -u origin main
+
+TASK 2: Project structure creation, Logging and Exception Handling
+-> create components folder in the src folder and add __init__.py file so that it can be imported as a package; components are the modules we will be creating like data ingestion - reading data from sources
+-> create a file called data_ingestion.py in components and once we ingest data, we will transform the data so create a file called data_transformation.py 
+-> After transorming the data, we will train the model with the data so, create a file called model_trainer.py
+-> Now that we have the components in place, we have to create pipeline; create a folder in src called pipeline
+-> we can have two types of pipeline, training and prediction; create a file called train_pipeline.py and then we can trigger the components we created to train the model from train_pipeline.py 
+-> Also create files called predict_pipeline.py and __init__.py files in the pipeline folder 
+-> Now create 3 files called logger.py for logging, exception.py for exception handling and utils.py for any functionalities that are common to entire applicationwill be written in utils.py
+-> Now let us start with the exception handling and write custom code for it (or we can get the generic code from the web by searching for exception handling python); whenever we raise a custom exception in a try catch block we use the class written in the exception.py to print the error message
+-> Next moving on to logger, any execution that happens then we will log everything so that if any exceptions are encountered then we can solve the issue using logger by logging into text file
+-> nOTE: os.getcwd() FETCHES CURRENT WORKING DIRECTORY
+-> We can test the logger by running it using the command: python src/logger.py; it will create a new folder and a file in it and starts logging
+-> Let us publish the changes using the commands: 
+        git add .
+        git commit -m "Project Structure"
+        git push -u origin main
