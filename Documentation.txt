@@ -6,7 +6,8 @@ Task 1: github setup, src folder and building the package
 -> open terminal - command prompt and run the following
 -> command: conda create -p venv python==3.8 -y   =>  venv is name of the environment, -y is yes for all installation permissions
 -> The above way of setting up is ideal as the required libraries are installedin venv environment 
--> Now activate the environment by using the command: conda activate venv/
+-> Now activate the environment by using the command: 
+    conda activate venv/
 -> Now that we activated the environment, we can clone this in the entire directory so that we can commit our code in the Github
 -> Now in the environment use the command: git init => to initialize empty git repository
 -> Now its time to add a ReadMe file, so let us create one 
@@ -49,3 +50,38 @@ TASK 2: Project structure creation, Logging and Exception Handling
         git add .
         git commit -m "Project Structure"
         git push -u origin main
+
+Task 3 : Data ingestion
+-> Here we need to provide input to the ingestion component mostly interms of path as in where to save the train and test data and so on; so, let us create a class called DataIngestionConfig
+-> I want to use this DataIngestionConfig, we have to use a decorator @dataclass; normally, inside a class we use init to define the class variable but if we use @dataclass, we can directly define the class variable
+-> Note: Use dataclass only for classes wher you just need variables but not functions; if you have functions proceed with __init__
+-> Now write a class for data_ingestion and initialize class variable using the above class using ingestion_config
+-> here we need to write a function called initiate_data_ingestion, to read data from sources like databases or csv; also add try catch block to catach any exceptions
+    -> In try block, read the dataset into a dataframe and also log it; it is important to log often to understand or debug the code
+    -> Next, let us create folders to store the data that we require throughout the process and also we can save the df as a csv in the raw_data_path; utilize the ingestion_config.objects to fetch the path
+    -> Now let us split the data into train above and test and save the train and test data as csv in the artifact folder
+    -> Now return the paths where we stord the test and train data, so that we can access it in data data_transformation
+    -> and add the exception block so that it raises a custom exception
+-> Now before performing data_ingestion, we need to install scikit-learn; so, add it to the requirements.txt and comment the -e. to avoid building the package again, now run it using
+    pip install -r requirements.txt
+-> After adding a main function and initializing the data_ingestion, run data ingestion
+    python src/components/data_ingestion.py
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+-> 
+
+
+
+-> 
